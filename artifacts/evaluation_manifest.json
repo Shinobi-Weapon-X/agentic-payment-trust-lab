@@ -1,0 +1,65 @@
+{
+  "seed": 20261116,
+  "total_synthetic_proposals": 1020,
+  "train_proposals": 765,
+  "clean_fit_proposals": 236,
+  "clean_calibration_proposals": 79,
+  "test_proposals": 255,
+  "unsafe_holdout": 120,
+  "legitimate_holdout": 135,
+  "threshold_calibrated_on_benign": 0.59214,
+  "policy": {
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1": 0.8889
+  },
+  "anomaly_model": {
+    "precision": 0.5526,
+    "recall": 0.175,
+    "f1": 0.2658
+  },
+  "policy_false_hold_rate_legitimate": 0.2222,
+  "policy_false_block_rate_legitimate": 0.0,
+  "policy_legitimate_straight_through": 0.7778,
+  "scripted_unsafe_value_intervened_sgd": 1687388.58,
+  "scripted_unsafe_value_exposed_sgd": 0.0,
+  "holdout_policy_outcomes": {
+    "ALLOW": 105,
+    "BLOCK": 96,
+    "HOLD": 54
+  },
+  "holdout_scenario_counts": {
+    "routine_approved": 105,
+    "high_value_legitimate": 20,
+    "missing_buyer_approval": 14,
+    "unknown_agent": 14,
+    "unknown_supplier": 14,
+    "over_limit": 14,
+    "changed_beneficiary": 12,
+    "duplicate_invoice": 12,
+    "expired_mandate": 10,
+    "unusual_hour_legitimate": 10,
+    "pending_bank_change": 10,
+    "invoice_prompt_injection": 10,
+    "revoked_mandate": 10
+  },
+  "eval_caveat": "Scripted case families are reflected in policy design; high gate scores are not independent evidence of deployment reliability. No funds move.",
+  "sha256_proposals_csv": "939294e65c8fd0225a7513f1eabbc1b390f75c6609a1fcc8714bca7d0410d6a8",
+  "sha256_holdout_csv": "4a8543d618c717e8879c48a656acf227c3e9a57f7a1e34520fef426b24b46565",
+  "scenario_counts": {
+    "routine_approved": 420,
+    "high_value_legitimate": 80,
+    "unusual_hour_legitimate": 40,
+    "unknown_agent": 55,
+    "revoked_mandate": 40,
+    "unknown_supplier": 55,
+    "changed_beneficiary": 50,
+    "duplicate_invoice": 50,
+    "over_limit": 55,
+    "invoice_prompt_injection": 40,
+    "missing_buyer_approval": 55,
+    "expired_mandate": 40,
+    "pending_bank_change": 40
+  },
+  "policy_design": "BLOCK for invalid mandate, account, amount, scope, duplicate or injection. HOLD for missing approval, pending bank change and risk-based enhanced review. No real execution."
+}
